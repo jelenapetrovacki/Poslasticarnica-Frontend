@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-edit></app-shopping-edit>
+    <hr>
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        style="cursor: pointer"
+        *ngFor="let stavka of stavke;"
+        (click)="onEditStavka(stavka.idPorudzbina)"
+      >
+        {{ stavka.nazivPoslastice }} - {{ stavka.idPoslastica + ' din' }} - {{ stavka.kolicina + ' kom'}}
+      </a>
+    </ul>
+  </div>
+</div>

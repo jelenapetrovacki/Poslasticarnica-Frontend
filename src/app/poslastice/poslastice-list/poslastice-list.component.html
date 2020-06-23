@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" *ngIf="ulogovan === 2" (click)="onNewPoslasica()">Dodaj proizvod</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+
+    <app-poslastice-item
+      *ngFor="let poslasticaEl of poslastice;"
+      [poslastica] = "poslasticaEl"
+      [index] = "poslasticaEl.idPoslastica"
+    ></app-poslastice-item>
+  </div>
+</div>
+

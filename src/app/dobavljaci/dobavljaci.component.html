@@ -1,0 +1,39 @@
+
+<div class="example-header">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" />
+  </mat-form-field>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="idDobavljac">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.idDobavljac}} </mat-cell>
+    </ng-container>
+
+    <!-- kontakt Column -->
+    <ng-container matColumnDef="kontaktDobavljaca">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Kontakt dobavljaca </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.kontaktDobavljaca}} </mat-cell>
+    </ng-container>
+
+    <!-- naziv Column -->
+    <ng-container matColumnDef="nazivDobavljaca">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Naziv dobavljaca </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.nazivDobavljaca}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+
